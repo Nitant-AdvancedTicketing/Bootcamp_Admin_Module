@@ -30,6 +30,16 @@
                 return false;
             }
         }
+        function validategroupID(val) {
+            if (!val.value.match(/^[a-zA-Z]+[-]+[0-9]/)) {
+
+
+                val.value = "";
+                val.focus();
+
+            }
+        }
+
     </script>
 
 
@@ -37,40 +47,84 @@
 <body>
 
     <header>
-        <table>
+        <table class="APOP_Title">
             <tr>
-                <td><img src="Images/AI Logo.jpg" width="113px" /></td>
-                <td style="text-align:center" class="auto-style7">
-                    <label for="advancedPurchaseOrderProcessing" style="font:bold; font-family:Calibri; font-size:x-large; color:blue">Advanced Purchase Order Processing</label>
+                <td align="left"><img src="Images/AI Logo.jpg" width="113px" /></td>
+                <td style="text-align:center">
+                    <label for="advancedPurchaseOrderProcessing" style="font:bold; font-family:Calibri; font-size:xx-large; color:blue">Advanced Purchase Order Processing</label>
                 </td>
             </tr>
         </table>
 
     </header>
 
-    <table style="width:100%; height:100%" ;>
+    <table style="width:100%; height:100%">
         <tr>
-            <td class="nav-bar" id="p1">
-                <label for="administration">Administration</label>
+            <td>
+                <div class="dropdown">
+                    <button class="nav-bar">Administration</button>
+                    <div class="dropdown-content">
+                        <a href="Admin_User_Maintenance.html">User Maintenance</a>
+                        <a href="Admin_Group_Maintenance.html">Group Maintenance</a>
+                        <a href="Admin_Module_List.html">Module List </a>
+                        <a href="#">Program List </a>
+                    </div>
+
+                </div>
+
+
             </td>
 
-            <td class="nav-bar">
-                <label for="masters">Masters</label>
+            <td>
+                <div class="dropdown">
+                    <button class="nav-bar">Masters</button>
+                    <div class="dropdown-content">
+                        <a href="#">Vendors</a>
+                        <a href="#">Item Types</a>
+                        <a href="#">Shipping Locations</a>
+                    </div>
+
+                </div>
+
+
             </td>
 
-            <td class="nav-bar">
-                <label for="poProcessing">PO Processing</label>
+            <td>
+                <div class="dropdown">
+                    <button class="nav-bar">PO Processing</button>
+                    <div class="dropdown-content">
+                        <a href="#">Requisition</a>
+                        <a href="#">Quotation</a>
+                        <a href="#">Purchase Order</a>
+                        <a href="#">Payments</a>
+                    </div>
+
+                </div>
+
+
             </td>
 
-            <td class="nav-bar">
-                <label for="reporting">Reporting</label>
+            <td>
+                <div class="dropdown">
+                    <button class="nav-bar">Reporting</button>
+                    <div class="dropdown-content">
+                        <a href="#">Print PO</a>
+                        <a href="#">AP Aging Analysis</a>
+                        <a href="#">Outstanding Orders</a>
+                        <a href="#">Closed Orders</a>
+                    </div>
+
+                </div>
+
+
             </td>
+        </tr>
     </table>
 
     <br />
     <br />
 
-    <form name="GroupMaintenance"  >
+    <form name="GroupMaintenance"  onsubmit="return validateForm()">
         <table align="center" width="100%">
             <tr>
                 <td class="pageTitleBanner">GROUP MAINTENANCE</td>
@@ -83,7 +137,7 @@
                     <label for="groupId">Group ID</label><sup style="color:red">*</sup>
                 </td>
                 <td colspan="2">
-                    <input type="text" id="groupId" width="40" placeholder="Group ID" required />
+                    <input type="text" id="groupId" width="40" placeholder="Group ID" title="Group ID must have a lower case or uppercase name followed by hyphen and a number"  onblur="validategroupID(this)" required />
                 </td>
             </tr>
             <tr>
@@ -91,15 +145,15 @@
                     <label for="description">Description</label><sup style="color:red">*</sup>
                 </td>
                 <td colspan="2">
-                    <textarea id="description" rows="5" cols="50" placeholder="Enter a brief description of the group here..."></textarea>
+                    <textarea id="description" rows="5" cols="50" placeholder="Enter a brief description of the group here..." maxlength="250"></textarea>
                 </td>
             </tr>            
             <tr>
                 <td></td>
-                <td style="text-align:left">
-                    <input type="submit" value="Save" class="buttonStyle" onclick="return validateForm()"/>
+                <td align="right" width="50px">
+                    <input type="submit" value="Save" class="buttonStyle" />
                 </td>
-                <td style="text-align:left">
+                <td align="left">
                     <input type="reset" value="Reset" class="buttonStyle" />
                 </td>
             </tr>

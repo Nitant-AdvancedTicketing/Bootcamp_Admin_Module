@@ -35,60 +35,82 @@
     
     <body >
         <header>
-            <table>
+            <table class="APOP_Title">
                 <tr>
-                    <td><img src="Images/AI Logo.jpg" width="113px" /></td>
-                    <td style="text-align:center" class="auto-style7">
-                        <label for="advancedPurchaseOrderProcessing" style="font:bold; font-family:Calibri; font-size:x-large; color:blue">Advanced Purchase Order Processing</label> 
+                    <td style="text-align:left"><img src="Images/AI Logo.jpg" width="113px" /></td>
+                    <td style="text-align:center">
+                        <label for="advancedPurchaseOrderProcessing" style="font:bold; font-family:Calibri; font-size:xx-large; color:blue">Advanced Purchase Order Processing</label> 
                     </td>
                 </tr>
             </table>
 
         </header>
 
-        <table style="width:100%; height:100%" ;>
+        <table style="width:100%; height:100%">
             <tr>
-                <td class="nav-bar" id="p1">
-                    <label for="administration">Administration</label>
+                <td>
+                    <div class="dropdown">
+                        <button class="nav-bar">Administration</button>
+                        <div class="dropdown-content">
+                            <a href="Admin_User_Maintenance.html">User Maintenance</a>
+                            <a href="Admin_Group_Maintenance.html">Group Maintenance</a>
+                            <a href="Admin_Module_List.html">Module List </a>
+                            <a href="#">Program List </a>
+                        </div>
+
+                    </div>
+
+
                 </td>
 
-                <td class="nav-bar">
-                    <label for="masters">Masters</label>
+                <td>
+                    <div class="dropdown">
+                        <button class="nav-bar">Masters</button>
+                        <div class="dropdown-content">
+                            <a href="#">Vendors</a>
+                            <a href="#">Item Types</a>
+                            <a href="#">Shipping Locations</a>
+                        </div>
+
+                    </div>
+
+
                 </td>
 
-                <td class="nav-bar">
-                    <label for="poProcessing">PO Processing</label>
+                <td>
+                    <div class="dropdown">
+                        <button class="nav-bar">PO Processing</button>
+                        <div class="dropdown-content">
+                            <a href="#">Requisition</a>
+                            <a href="#">Quotation</a>
+                            <a href="#">Purchase Order</a>
+                            <a href="#">Payments</a>
+                        </div>
+
+                    </div>
+
+
                 </td>
 
-                <td class="nav-bar">
-                    <label for="reporting">Reporting</label>
+                <td>
+                    <div class="dropdown">
+                        <button class="nav-bar">Reporting</button>
+                        <div class="dropdown-content">
+                            <a href="#">Print PO</a>
+                            <a href="#">AP Aging Analysis</a>
+                            <a href="#">Outstanding Orders</a>
+                            <a href="#">Closed Orders</a>
+                        </div>
+
+                    </div>
+
+
                 </td>
+            </tr>
         </table>
-
-        <div id="AdminDropDown">
-            <table style="width:100%" ;>
-                <tr>
-                    <td> User Maintenance </td>
-                </tr>
-                <tr>
-                    <td> Group Maintenance</td>
-                </tr>
-                <tr>
-                    <td> Module List</td>
-                </tr>
-                <tr>
-                    <td>Program List</td>
-                </tr>
-
-                <tr></tr>
-                <tr></tr>
-                <tr></tr>
-            </table>
-        </div>
 
         <table align="center" id="GroupMaintenanceTable">
             <tr></tr>
-
             <tr></tr>
             <tr>
                 

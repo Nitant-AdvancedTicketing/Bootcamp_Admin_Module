@@ -2,71 +2,37 @@
 <html>
 <head>
     <title>Aministration - User Maintenance</title>
-	<meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="AdminStyleSheet.css"/>
-    <script type="text/javascript">        
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="AdminStyleSheet.css" />
+    <script type="text/javascript">
         function validateForm()
         {
             var form = document.forms[0];
             var pwd = document.forms[0][2].value;
             var rePwd = document.forms[0][3].value;
-
-            if (pwd != rePwd)
-            {
-                alert("Passwords must match!");
-                document.getElementById("password").value = "";
-                document.getElementById("rePassword").value = "";
-                document.getElementById("password").focus();
+            
+            var passw = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
+            if (document.getElementById("password").value.match(passw))
+            {                
+                if (pwd == rePwd)
+                {
+                    alert("User details entered!");
+                    return true;
+                }
+                else if (pwd != rePwd)
+                {
+                    document.getElementById("password").value = "";
+                    document.getElementById("rePassword").value = "";
+                    document.getElementById("password").focus();
+                    alert("Passwords must match!");
+                    return false;
+                }
             }
-            /*
-                re = /^\w+$/;
-
-                if (!re.test(form.username.value)) {
-                    alert("Error: Username must contain only letters, numbers and underscores!");
-                    form.username.focus();
-                    return false;
-                }
-
-                if (form.pwd1.value != "" && form.pwd1.value == form.pwd2.value) {
-                    if (form.pwd1.value.length < 6) {
-                        alert("Error: Password must contain at least six characters!");
-                        form.pwd1.focus();
-                        return false;
-                    }
-                    if (form.pwd1.value == form.username.value) {
-                        alert("Error: Password must be different from Username!");
-                        form.pwd1.focus();
-                        return false;
-                    }
-                    re = /[0-9]/;
-                    if (!re.test(form.pwd1.value)) {
-                        alert("Error: password must contain at least one number (0-9)!");
-                        form.pwd1.focus();
-                        return false;
-                    }
-                    re = /[a-z]/;
-                    if (!re.test(form.pwd1.value)) {
-                        alert("Error: password must contain at least one lowercase letter (a-z)!");
-                        form.pwd1.focus();
-                        return false;
-                    }
-                    re = /[A-Z]/;
-                    if (!re.test(form.pwd1.value)) {
-                        alert("Error: password must contain at least one uppercase letter (A-Z)!");
-                        form.pwd1.focus();
-                        return false;
-                    }
-                } else {
-                    alert("Error: Please check that you've entered and confirmed your password!");
-                    form.pwd1.focus();
-                    return false;
-                }
-                */
-                
-            
-            
-                alert("User details successfully added!");
-                return true;
+            else
+            {
+                alert('Password must consist of atleast one uppercase, lowercase letter, digit and a special character. Password must be between 6-12 characters long!');
+                return false;
+            }
         }
     </script>
 
@@ -74,45 +40,87 @@
 
 </head>
 <body>
-
     <header>
-        <table>
+        <table class="APOP_Title">
             <tr>
                 <td><img src="Images/AI Logo.jpg" width="113px" /></td>
-                <td style="text-align:center" class="auto-style7">
-                    <label for="advancedPurchaseOrderProcessing" style="font:bold; font-family:Calibri; font-size:x-large; color:blue">Advanced Purchase Order Processing</label>
+                <td style="text-align:center">
+                    <label for="advancedPurchaseOrderProcessing" style="font:bold; font-family:Calibri; font-size:xx-large; color:blue">Advanced Purchase Order Processing</label>
                 </td>
             </tr>
         </table>
 
     </header>
 
-    <table style="width:100%; height:100%" ;>
+    <table style="width:100%; height:100%">
         <tr>
-            <td class="nav-bar" id="p1">
-                <label for="administration">Administration</label>
+            <td>
+                <div class="dropdown">
+                    <button class="nav-bar">Administration</button>
+                    <div class="dropdown-content">
+                        <a href="Admin_User_Maintenance.html">User Maintenance</a>
+                        <a href="Admin_Group_Maintenance.html">Group Maintenance</a>
+                        <a href="Admin_Module_List.html">Module List </a>
+                        <a href="#">Program List </a>
+                    </div>
+
+                </div>
+
+
             </td>
 
-            <td class="nav-bar">
-                <label for="masters">Masters</label>
+            <td>
+                <div class="dropdown">
+                    <button class="nav-bar">Masters</button>
+                    <div class="dropdown-content">
+                        <a href="#">Vendors</a>
+                        <a href="#">Item Types</a>
+                        <a href="#">Shipping Locations</a>
+                    </div>
+
+                </div>
+
+
             </td>
 
-            <td class="nav-bar">
-                <label for="poProcessing">PO Processing</label>
+            <td>
+                <div class="dropdown">
+                    <button class="nav-bar">PO Processing</button>
+                    <div class="dropdown-content">
+                        <a href="#">Requisition</a>
+                        <a href="#">Quotation</a>
+                        <a href="#">Purchase Order</a>
+                        <a href="#">Payments</a>
+                    </div>
+
+                </div>
+
+
             </td>
 
-            <td class="nav-bar">
-                <label for="reporting">Reporting</label>
+            <td>
+                <div class="dropdown">
+                    <button class="nav-bar">Reporting</button>
+                    <div class="dropdown-content">
+                        <a href="#">Print PO</a>
+                        <a href="#">AP Aging Analysis</a>
+                        <a href="#">Outstanding Orders</a>
+                        <a href="#">Closed Orders</a>
+                    </div>
+
+                </div>
+
+
             </td>
+        </tr>
     </table>
+    <br />
+    <br />
 
-    <br />
-    <br />
-    
     <form name="UserMaintenance" onsubmit="return validateForm()">
         <table align="center" width="100%">
             <tr>
-                <td class="pageTitleBanner" >USER MAINTENANCE</td>
+                <td class="pageTitleBanner">USER MAINTENANCE</td>
             </tr>
         </table>
         <table style="background-color:#e4dfdf" width="80%" align="center" cellpadding="5px">
@@ -123,11 +131,11 @@
                 <td colspan="3">
                     <select name="employeeName" style="width:350px" id="employeeName" title="Employee Name">
                         <option value="Dixita">Dixita</option>
-                        <option value="Nitant">Nitant</option>                        
+                        <option value="Nitant">Nitant</option>
                         <option value="Sarthak">Sarthak</option>
-                        <option value="Shivani">Shivani</option>                                                 
+                        <option value="Shivani">Shivani</option>
                     </select>
-                 </td>
+                </td>
                 <td></td>
             </tr>
 
@@ -152,7 +160,7 @@
                     <label for="password">Password</label> <sup style="color:red">*</sup>
                 </td>
                 <td colspan="3">
-                    <input style="width:350px" type="password" id="password" placeholder="Password" title="Password must be 6-12 characters long, must contain letters, numbers and special character!" required/>
+                    <input style="width:350px" type="password" id="password" name="p1" placeholder="Password" title="Password must be 6-12 characters long, must contain letters, numbers and special character!" required />
                 </td>
                 <td></td>
             </tr>
@@ -168,14 +176,14 @@
             </tr>
             <tr>
                 <td></td>
-                <td style="text-align:left">
-                    <input type="submit" value="Save" class="buttonStyle"/>
+                <td align="right" width="50px">
+                    <input type="submit" value="Save" class="buttonStyle" />
+                    <!-- onclick="checkPwd(document.UserMaintenance.p1)"/> -->
                 </td>
-                <td style="text-align:left">
-                    <input type="reset" value="Reset" class="buttonStyle"/>
+                <td align="left">
+                    <input type="reset" value="Reset" class="buttonStyle" />
                 </td>
-                <td></td>
-                <td></td>
+
             </tr>
         </table>
 
