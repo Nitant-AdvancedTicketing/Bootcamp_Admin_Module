@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Advanced Purchase Order Processing </title>
+    	<meta charset="utf-8" />
+
+        <style type="text/css">
+                    .nav-bar
+        {
+            background-color:#a76060;
+            text-align:center; 
+            width: 175px;
+        }
+
+            .nav-bar:hover {
+                color: azure;
+            }
+
+            .stayDown {
+                margin-top: 500px;
+            }
+
+            #AdminDropDown {
+                display: none;
+            }
+
+            .main li {
+                list-style: none;
+                display: block;
+                background-color: brown;
+                text-align: center;
+                width: 176px;
+            }
+        </style>
+       
+    </head > 
+    
+    <body >
+        <header>
+            <table>
+                <tr>
+                    <td><img src="Images/AI Logo.jpg" width="113px" /></td>
+                    <td style="text-align:center" class="auto-style7">
+                        <label for="advancedPurchaseOrderProcessing" style="font:bold; font-family:Calibri; font-size:x-large; color:blue">Advanced Purchase Order Processing</label> 
+                    </td>
+                </tr>
+            </table>
+
+        </header>
+
+        <table style="width:100%; height:100%";>
+            <tr>
+                <td class="nav-bar" id="p1">
+                    <label for="administration">Administration</label>
+                </td>
+
+                <td class="nav-bar">
+                    <label for="masters">Masters</label>
+                </td>
+
+                <td class="nav-bar">
+                    <label for="poProcessing">PO Processing</label>
+                </td>
+
+                <td class="nav-bar">
+                    <label for="reporting">Reporting</label>
+                </td>
+        </table>
+
+        <br />
+        <br />
+
+        <form name="moduleList">
+            <table style="background-color:#e4dfdf" width="80%" align="center" cellspacing="10px">
+                <tr>
+                    <td colspan="4" style="text-align:center">MODULE LIST</td>
+                </tr>
+                <tr>                    
+                    <td style="text-align:right">
+                        <label for="moduleName">Module Name</label>
+                    </td>
+                    <td colspan="2">
+                        <select name="moduleNameDropDown" style="width:200px;">
+                            <option value="Administration">Administration</option>
+                            <option value="Masters">Masters</option>
+                            <option value="PO Processing">PO Processing</option>
+                            <option value="Reporting">Reporting</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>                    
+                    <td style="text-align:right;">
+                        <label for="programName">Program Name</label>
+                    </td>
+                    <td colspan="2" >
+                        <input style="width:200px;"type="text" id="Program Name" />
+                    </td>
+                </tr>
+                <tr>                    
+                    <td style="text-align:right">
+                        <label for="programType">Program Type</label>
+                    </td>
+                    <td colspan="2">
+                        <select name="programTypeDropDown" style="width:200px;">
+                            <option value="Administration">Administration</option>
+                            <option value="Masters">Masters</option>
+                            <option value="PO Processing">PO Processing</option>
+                            <option value="Reporting">Reporting</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    
+                    <td style="text-align:right">
+                        <label for="programDescription">Program Description</label>
+                    </td>
+                    <td colspan="2">
+                        <textarea id="programDescription" rows="5" cols="50"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td style="text-align:left">
+                        <input type="submit" value="Save" />
+                    </td>
+                    <td style="text-align:left"><input type="button" value="Reset" /></td>
+                </tr>
+            </table>
+        </form>
+
+    <footer style="text-align:center;background-color:#d1cdcd" class="stayDown">&copy; Copyright - Advanced Business & Healthcare Solutions India Pvt Ltd</footer>
+    </body > 
+</html >
+     
