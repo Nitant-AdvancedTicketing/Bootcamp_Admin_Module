@@ -3,35 +3,35 @@
 <head>
     <title></title>
 	<meta charset="utf-8" />
+    
+    <link rel="stylesheet" type="text/css" href="AdminStyleSheet.css" />
 
-    <style type="text/css">
-        .nav-bar
+    <script type="text/javascript">
+        function validateForm()
         {
-            background-color:#a76060;
-            text-align:center; 
-            width: 175px;
-        }
+            var groupID = document.getElementById("groupId").value;
+            var desc = document.getElementById("description").value;
 
-        .nav-bar:hover {
-            color: azure;
-        }
+            if (groupID == "" && desc == "")
+            {
+                alert("Group ID and Description can`t be empty");
+                return false;
+            }
 
-        .stayDown {
-            margin-top: 500px;
-        }
+            if (groupID == "")
+            {
+                alert("Gropu ID can`t be empty");
+                return false;
+            }
 
-        #AdminDropDown {
-            display: none;
+            if(desc=="")
+            {
+                alert("Description can`t be empty");
+                return false;
+            }
         }
+    </script>
 
-        .main li {
-            list-style: none;
-            display: block;
-            background-color: brown;
-            text-align: center;
-            width: 176px;
-        }
-    </style>
 
 </head>
 <body>
@@ -70,34 +70,37 @@
     <br />
     <br />
 
-    <form name="GroupMaintenance">
+    <form name="GroupMaintenance"  >
+        <table align="center" width="100%">
+            <tr>
+                <td class="pageTitleBanner">GROUP MAINTENANCE</td>
+            </tr>
+        </table>
+
         <table style="background-color:#e4dfdf" width="80%" align="center" cellspacing="10px">
             <tr>
-                <td colspan="4" style="text-align:center">GROUP MAINTENANCE</td>
+                <td style="text-align:right">
+                    <label for="groupId">Group ID</label><sup style="color:red">*</sup>
+                </td>
+                <td colspan="2">
+                    <input type="text" id="groupId" width="40" placeholder="Group ID" required />
+                </td>
             </tr>
             <tr>
                 <td style="text-align:right">
-                    <label for="groupId">Group ID</label>
+                    <label for="description">Description</label><sup style="color:red">*</sup>
                 </td>
                 <td colspan="2">
-                    <input type="text" id="groupId" width="40"/>
-                </td>
-            </tr>
-            <tr>
-                <td style="text-align:right">
-                    <label for="description">Description</label>
-                </td>
-                <td colspan="2">
-                    <textarea id="description" rows="5" cols="50" ></textarea>
+                    <textarea id="description" rows="5" cols="50" placeholder="Enter a brief description of the group here..."></textarea>
                 </td>
             </tr>            
             <tr>
                 <td></td>
                 <td style="text-align:left">
-                    <input type="submit" value="Save" />
+                    <input type="submit" value="Save" onclick="return validateForm()"/>
                 </td>
                 <td style="text-align:left">
-                    <input type="button" value="Reset" />
+                    <input type="reset" value="Reset" />
                 </td>
             </tr>
         </table>

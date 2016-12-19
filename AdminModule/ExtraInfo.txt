@@ -1,0 +1,2 @@
+﻿Hex code for edit pencil: &#x270E
+Hex code for delete:&#x274C

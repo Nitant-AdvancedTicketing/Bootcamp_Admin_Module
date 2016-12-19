@@ -3,35 +3,72 @@
 <head>
     <title>Aministration - User Maintenance</title>
 	<meta charset="utf-8" />
-
-    <style type="text/css">
-        .nav-bar
+    <link rel="stylesheet" type="text/css" href="AdminStyleSheet.css"/>
+    <script type="text/javascript">        
+        function validateForm()
         {
-            background-color:#a76060;
-            text-align:center; 
-            width: 175px;
-        }
-        .nav-bar:hover {
-            color: azure;
-        }
+            var form = document.forms[0];
+            var pwd = document.forms[0][2].value;
+            var rePwd = document.forms[0][3].value;
 
-        .stayDown {
-            margin-top: 500px;
-        }
+            if (pwd != rePwd)
+            {
+                alert("Passwords must match!");
+                document.getElementById("password").value = "";
+                document.getElementById("rePassword").value = "";
+                document.getElementById("password").focus();
+            }
+            /*
+                re = /^\w+$/;
 
-        #AdminDropDown {
-            display: none;
-        }
+                if (!re.test(form.username.value)) {
+                    alert("Error: Username must contain only letters, numbers and underscores!");
+                    form.username.focus();
+                    return false;
+                }
 
-        .main li {
-            list-style: none;
-            display: block;
-            background-color: #8a4343;
-            text-align: center;
-            width: 176px;
+                if (form.pwd1.value != "" && form.pwd1.value == form.pwd2.value) {
+                    if (form.pwd1.value.length < 6) {
+                        alert("Error: Password must contain at least six characters!");
+                        form.pwd1.focus();
+                        return false;
+                    }
+                    if (form.pwd1.value == form.username.value) {
+                        alert("Error: Password must be different from Username!");
+                        form.pwd1.focus();
+                        return false;
+                    }
+                    re = /[0-9]/;
+                    if (!re.test(form.pwd1.value)) {
+                        alert("Error: password must contain at least one number (0-9)!");
+                        form.pwd1.focus();
+                        return false;
+                    }
+                    re = /[a-z]/;
+                    if (!re.test(form.pwd1.value)) {
+                        alert("Error: password must contain at least one lowercase letter (a-z)!");
+                        form.pwd1.focus();
+                        return false;
+                    }
+                    re = /[A-Z]/;
+                    if (!re.test(form.pwd1.value)) {
+                        alert("Error: password must contain at least one uppercase letter (A-Z)!");
+                        form.pwd1.focus();
+                        return false;
+                    }
+                } else {
+                    alert("Error: Please check that you've entered and confirmed your password!");
+                    form.pwd1.focus();
+                    return false;
+                }
+                */
+                
+            
+            
+                alert("User details successfully added!");
+                return true;
         }
-
-    </style>
+    </script>
 
 
 
@@ -72,17 +109,19 @@
     <br />
     <br />
     
-    <form name="UserMaintenance">
-        <table style="background-color:#e4dfdf" width="80%" align="center" cellpadding="5px">
+    <form name="UserMaintenance" onsubmit="return validateForm()">
+        <table align="center" width="100%">
             <tr>
-                <td colspan="5" style="text-align:center">USER MAINTENANCE</td>
+                <td class="pageTitleBanner" >USER MAINTENANCE</td>
             </tr>
+        </table>
+        <table style="background-color:#e4dfdf" width="80%" align="center" cellpadding="5px">
             <tr>
                 <td style="text-align:right">
                     <label for="employeeName">Employee Name</label>
                 </td>
                 <td colspan="3">
-                    <select name="employeeName" style="width:350px">
+                    <select name="employeeName" style="width:350px" id="employeeName" title="Employee Name">
                         <option value="Dixita">Dixita</option>
                         <option value="Nitant">Nitant</option>                        
                         <option value="Sarthak">Sarthak</option>
@@ -97,7 +136,7 @@
                     <label for="group">Group</label>
                 </td>
                 <td colspan="3">
-                    <select name="group" style="width:350px">
+                    <select name="group" style="width:350px" id="group" title="Group Name">
                         <option value="Administration">Administration</option>
                         <option value="Masters">Masters</option>
                         <option value="PO Processing">PO Processing</option>
@@ -110,20 +149,20 @@
 
             <tr>
                 <td style="text-align:right">
-                    <label for="password">Password</label>
+                    <label for="password">Password</label> <sup style="color:red">*</sup>
                 </td>
                 <td colspan="3">
-                    <input style="width:350px" type="password" id="password"/>
+                    <input style="width:350px" type="password" id="password" placeholder="Password" title="Password must be 6-12 characters long, must contain letters, numbers and special character!" required/>
                 </td>
                 <td></td>
             </tr>
 
             <tr>
                 <td style="text-align:right">
-                    <label for="rePassword">Re-enter Password</label>
+                    <label for="rePassword">Re-enter Password</label> <sup style="color:red">*</sup>
                 </td>
                 <td colspan="3">
-                    <input style="width:350px" type="password" id="rePassword" />
+                    <input style="width:350px" type="password" id="rePassword" placeholder="Re-enter Password" required />
                 </td>
                 <td></td>
             </tr>
@@ -133,13 +172,15 @@
                     <input type="submit" value="Save" />
                 </td>
                 <td style="text-align:left">
-                    <input type="button" value="Reset" />
+                    <input type="reset" value="Reset" />
                 </td>
                 <td></td>
                 <td></td>
             </tr>
         </table>
+
     </form>
+    <h1 id="a"></h1>
 
     <footer style="text-align:center;background-color:#d1cdcd" class="stayDown">&copy; Copyright - Advanced Business & Healthcare Solutions India Pvt Ltd</footer>
 

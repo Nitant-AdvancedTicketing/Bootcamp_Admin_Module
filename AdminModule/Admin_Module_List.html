@@ -4,39 +4,38 @@
         <title>Advanced Purchase Order Processing </title>
     	<meta charset="utf-8" />
 
-        <style type="text/css">
-                    .nav-bar
+        <link rel="stylesheet" type="text/css" href="AdminStyleSheet.css" />
+        
+        <script type="text/javascript">
+        function validateForm()
         {
-            background-color:#a76060;
-            text-align:center; 
-            width: 175px;
+            var pName = document.getElementById("ProgramName").value;
+            var pDesc = document.getElementById("programDescription").value;
+
+            if (pName == "" && pDesc == "")
+            {
+                alert("Program Name and Program Description can`t be empty");
+                return false;
+            }
+
+            if (pName == "")
+            {
+                alert("Program Name can`t be empty");
+                return false;
+            }
+
+            if(pDesc=="")
+            {
+                alert("Program Description can`t be empty");
+                return false;
+            }
         }
+        </script>
 
-            .nav-bar:hover {
-                color: azure;
-            }
-
-            .stayDown {
-                margin-top: 500px;
-            }
-
-            #AdminDropDown {
-                display: none;
-            }
-
-            .main li {
-                list-style: none;
-                display: block;
-                background-color: brown;
-                text-align: center;
-                width: 176px;
-            }
-        </style>
-       
     </head > 
     
     <body >
-        <header>
+       <header>
             <table>
                 <tr>
                     <td><img src="Images/AI Logo.jpg" width="113px" /></td>
@@ -71,10 +70,13 @@
         <br />
 
         <form name="moduleList">
-            <table style="background-color:#e4dfdf" width="80%" align="center" cellspacing="10px">
+            <table align="center" width="100%">
                 <tr>
-                    <td colspan="4" style="text-align:center">MODULE LIST</td>
+                    <td class="pageTitleBanner">MODULE LIST</td>
                 </tr>
+            </table>
+
+            <table style="background-color:#e4dfdf" width="80%" align="center" cellspacing="10px">
                 <tr>                    
                     <td style="text-align:right">
                         <label for="moduleName">Module Name</label>
@@ -90,10 +92,10 @@
                 </tr>
                 <tr>                    
                     <td style="text-align:right;">
-                        <label for="programName">Program Name</label>
+                        <label for="programName">Program Name</label><sup style="color:red">*</sup>
                     </td>
                     <td colspan="2" >
-                        <input style="width:200px;"type="text" id="Program Name" />
+                        <input style="width:200px;"type="text" id="ProgramName" title="Program Name" placeholder="Enter program name" required />
                     </td>
                 </tr>
                 <tr>                    
@@ -101,7 +103,7 @@
                         <label for="programType">Program Type</label>
                     </td>
                     <td colspan="2">
-                        <select name="programTypeDropDown" style="width:200px;">
+                        <select name="programTypeDropDown" style="width:200px;" title="Program Type">
                             <option value="Administration">Administration</option>
                             <option value="Masters">Masters</option>
                             <option value="PO Processing">PO Processing</option>
@@ -112,18 +114,18 @@
                 <tr>
                     
                     <td style="text-align:right">
-                        <label for="programDescription">Program Description</label>
+                        <label for="programDescription">Program Description</label><sup style="color:red">*</sup>
                     </td>
                     <td colspan="2">
-                        <textarea id="programDescription" rows="5" cols="50"></textarea>
+                        <textarea id="programDescription" rows="5" cols="50" title="Program Description" placeholder="Enter a brief Program Description here..." required></textarea>
                     </td>
                 </tr>
                 <tr>
                     <td></td>
                     <td style="text-align:left">
-                        <input type="submit" value="Save" />
+                        <input type="submit" value="Save" onclick="return validateForm()"/>
                     </td>
-                    <td style="text-align:left"><input type="button" value="Reset" /></td>
+                    <td style="text-align:left"><input type="reset" value="Reset" /></td>
                 </tr>
             </table>
         </form>
