@@ -1,223 +1,227 @@
 ﻿<!DOCTYPE html>
 <html>
-    <head>
-        <title>Advanced Purchase Order Processing </title>
-    	<meta charset="utf-8" />
-        <link rel="stylesheet" type="text/css" href="AdminStyleSheet.css" />
-        <style type="text/css">
+<head>
+    <title>Advanced Purchase Order Processing </title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="AdminStyleSheet.css" />
+    <style type="text/css">
+        .menuColumnWidth 
+        {
+            width: 121px;
+        }
 
-                .menuColumnWidth{
-                width:121px;
-            }
-            .menu{
-                text-align:center;
-            }
+        .menu 
+        {
+            text-align: center;
+        }
 
-            .tableColumn{
-                height:30px;
-                width:75px
-            }
-            td{
-                text-align:center;
-            }
-        </style>        
+        .tableColumn 
+        {
+            height: 30px;
+            width: 75px;
+        }
 
-        <script type="text/javascript">
-            function makeTable()
-            {
-                var myTable = document.getElementById("GroupMaintenanceTable");
-                var myRow = HTMLTableRowElement;
-                
-                
-            }
-        </script>
-    </head > 
-    
-    <body >
-        <header>
-            <table class="APOP_Title">
-                <tr>
-                    <td style="text-align:left"><img src="Images/AI Logo.jpg" width="113px" /></td>
-                    <td style="text-align:center">
-                        <label for="advancedPurchaseOrderProcessing" style="font:bold; font-family:Calibri; font-size:xx-large; color:blue">Advanced Purchase Order Processing</label> 
-                    </td>
-                </tr>
-            </table>
+        td 
+        {
+            text-align: center;
+        }
+    </style>
 
-        </header>
+    <script type="text/javascript">
+        function makeTable()
+        {
+            var myTable = document.getElementById("GroupMaintenanceTable");
+            var myRow = HTMLTableRowElement;
 
-        <table style="width:100%; height:100%">
+
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <table class="APOP_Title">
             <tr>
-                <td>
-                    <div class="dropdown">
-                        <button class="nav-bar">Administration</button>
-                        <div class="dropdown-content">
-                            <a href="Admin_User_Maintenance.html">User Maintenance</a>
-                            <a href="Admin_Group_Maintenance.html">Group Maintenance</a>
-                            <a href="Admin_Module_List.html">Module List </a>
-                            <a href="#">Program List </a>
-                        </div>
-
-                    </div>
-
-
-                </td>
-
-                <td>
-                    <div class="dropdown">
-                        <button class="nav-bar">Masters</button>
-                        <div class="dropdown-content">
-                            <a href="#">Vendors</a>
-                            <a href="#">Item Types</a>
-                            <a href="#">Shipping Locations</a>
-                        </div>
-
-                    </div>
-
-
-                </td>
-
-                <td>
-                    <div class="dropdown">
-                        <button class="nav-bar">PO Processing</button>
-                        <div class="dropdown-content">
-                            <a href="#">Requisition</a>
-                            <a href="#">Quotation</a>
-                            <a href="#">Purchase Order</a>
-                            <a href="#">Payments</a>
-                        </div>
-
-                    </div>
-
-
-                </td>
-
-                <td>
-                    <div class="dropdown">
-                        <button class="nav-bar">Reporting</button>
-                        <div class="dropdown-content">
-                            <a href="#">Print PO</a>
-                            <a href="#">AP Aging Analysis</a>
-                            <a href="#">Outstanding Orders</a>
-                            <a href="#">Closed Orders</a>
-                        </div>
-
-                    </div>
-
-
+                <td style="text-align:left"><img src="Images/AdvancedLogo.jpg" width="130px" /></td>
+                <td style="text-align:left">
+                    <label for="advancedPurchaseOrderProcessing" style="font:bold; font-family:Calibri; font-size:xx-large; color:blue">Advanced Purchase Order Processing</label>
                 </td>
             </tr>
         </table>
 
-        <table align="center" id="GroupMaintenanceTable">
-            <tr></tr>
-            <tr></tr>
-            <tr>
-                
-                <td class="pageTitleBanner" >
-                    <label for="groupMaintenance">GROUP MAINTENANCE</label>
-                </td>
-                
-            </tr>
+    </header>
 
-            <tr></tr>
-            <tr></tr>
-            
-            <tr>
-                <td style="font-family:Calibri;font-weight:bold; text-decoration:underline; text-align:right">Add</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>    
+    <table style="width:100%; height:100%">
+        <tr>
+            <td>
+                <div class="dropdown">
+                    <button class="nav-bar">Administration</button>
+                    <div class="dropdown-content">
+                        <a href="Admin_User_Maintenance.html">User Maintenance</a>
+                        <a href="Admin_Group_Maintenance.html">Group Maintenance</a>
+                        <a href="Admin_Module_List.html">Module List </a>
+                        <a href="#">Program List </a>
+                    </div>
+
+                </div>
+
+
+            </td>
+
+            <td>
+                <div class="dropdown">
+                    <button class="nav-bar">Masters</button>
+                    <div class="dropdown-content">
+                        <a href="#">Vendors</a>
+                        <a href="#">Item Types</a>
+                        <a href="#">Shipping Locations</a>
+                    </div>
+
+                </div>
+
+
+            </td>
+
+            <td>
+                <div class="dropdown">
+                    <button class="nav-bar">PO Processing</button>
+                    <div class="dropdown-content">
+                        <a href="#">Requisition</a>
+                        <a href="#">Quotation</a>
+                        <a href="#">Purchase Order</a>
+                        <a href="#">Payments</a>
+                    </div>
+
+                </div>
+
+
+            </td>
+
+            <td>
+                <div class="dropdown">
+                    <button class="nav-bar">Reporting</button>
+                    <div class="dropdown-content">
+                        <a href="#">Print PO</a>
+                        <a href="#">AP Aging Analysis</a>
+                        <a href="#">Outstanding Orders</a>
+                        <a href="#">Closed Orders</a>
+                    </div>
+
+                </div>
+
+
+            </td>
+        </tr>
+    </table>
+
+    <table align="center" id="GroupMaintenanceTable">
+        <tr></tr>
+        <tr></tr>
+        <tr>
+
+            <td class="pageTitleBanner">
+                <label for="groupMaintenance">GROUP MAINTENANCE</label>
+            </td>
+
+        </tr>
+
+        <tr></tr>
+        <tr></tr>
+
+        <tr>
+            <td style="font-family:Calibri;font-weight:bold; text-decoration:underline; text-align:right">Add</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
             <td align="center">
 
-                    <table align="center" width="900px">
-                        <tr style="background-color:#d1cdcd;">
-                            <td style="font-family:Calibri;font-weight:bold" >Group</td>
-                            <td style="font-family:Calibri;font-weight:bold">Description</td>
-                            <td style="font-family:Calibri;font-weight:bold">Edit</td>
-                            <td style="font-family:Calibri;font-weight:bold">Delete</td>
-                        </tr>
+                <table align="center" width="900px">
+                    <tr style="background-color:#d1cdcd;">
+                        <td style="font-family:Calibri;font-weight:bold">Group</td>
+                        <td style="font-family:Calibri;font-weight:bold">Description</td>
+                        <td style="font-family:Calibri;font-weight:bold">Edit</td>
+                        <td style="font-family:Calibri;font-weight:bold">Delete</td>
+                    </tr>
 
-                        <tr>
-                            <td height="15px"></td>
-                            <td height="15px"></td>
-                            <td height="15px"><img src="Images/pencil.png" width="15px" height="15px"/></td>
-                            <td height="15px" style="color:red">&#x274C</td>
-                        </tr>
+                    <tr>
+                        <td height="15px"></td>
+                        <td height="15px"></td>
+                        <td height="15px"><img src="Images/pencil.png" width="15px" height="15px" /></td>
+                        <td height="15px" style="color:red">&#x274C</td>
+                    </tr>
 
-                        <tr style="background-color:#bff6f1">
-                            <td height="15px"></td>
-                            <td height="15px"></td>
-                            <td height="15px" align="center"><img src="Images/pencil.png" width="15px" height="15px" /></td>
-                            <td height="15px" style="color:red">&#x274C</td>
-                        </tr>
-                        <tr>
-                            <td height="15px"></td>
-                            <td height="15px"></td>
-                            <td height="15px"><img src="Images/pencil.png" width="15px" height="15px" /></td>
-                            <td height="15px" style="color:red">&#x274C</td>
-                        </tr>
+                    <tr style="background-color:#bff6f1">
+                        <td height="15px"></td>
+                        <td height="15px"></td>
+                        <td height="15px" align="center"><img src="Images/pencil.png" width="15px" height="15px" /></td>
+                        <td height="15px" style="color:red">&#x274C</td>
+                    </tr>
+                    <tr>
+                        <td height="15px"></td>
+                        <td height="15px"></td>
+                        <td height="15px"><img src="Images/pencil.png" width="15px" height="15px" /></td>
+                        <td height="15px" style="color:red">&#x274C</td>
+                    </tr>
 
-                        <tr style="background-color:#bff6f1">
-                            <td height="15px"></td>
-                            <td height="15px"></td>
-                            <td height="15px" align="center"><img src="Images/pencil.png" width="15px" height="15px" /></td>
-                            <td height="15px" style="color:red">&#x274C</td>
-                        </tr>
+                    <tr style="background-color:#bff6f1">
+                        <td height="15px"></td>
+                        <td height="15px"></td>
+                        <td height="15px" align="center"><img src="Images/pencil.png" width="15px" height="15px" /></td>
+                        <td height="15px" style="color:red">&#x274C</td>
+                    </tr>
 
-                        <tr>
-                            <td height="15px"></td>
-                            <td height="15px"></td>
-                            <td height="15px"><img src="Images/pencil.png" width="15px" height="15px" /></td>
-                            <td height="15px" style="color:red">&#x274C</td>
-                        </tr>
+                    <tr>
+                        <td height="15px"></td>
+                        <td height="15px"></td>
+                        <td height="15px"><img src="Images/pencil.png" width="15px" height="15px" /></td>
+                        <td height="15px" style="color:red">&#x274C</td>
+                    </tr>
 
-                        <tr style="background-color:#bff6f1">
-                            <td height="15px"></td>
-                            <td height="15px"></td>
-                            <td height="15px" align="center"><img src="Images/pencil.png" width="15px" height="15px" /></td>
-                            <td height="15px" style="color:red">&#x274C</td>
-                        </tr>
+                    <tr style="background-color:#bff6f1">
+                        <td height="15px"></td>
+                        <td height="15px"></td>
+                        <td height="15px" align="center"><img src="Images/pencil.png" width="15px" height="15px" /></td>
+                        <td height="15px" style="color:red">&#x274C</td>
+                    </tr>
 
-                        <tr>
-                            <td height="15px"></td>
-                            <td height="15px"></td>
-                            <td height="15px"><img src="Images/pencil.png" width="15px" height="15px" /></td>
-                            <td height="15px" style="color:red">&#x274C</td>
-                        </tr>
+                    <tr>
+                        <td height="15px"></td>
+                        <td height="15px"></td>
+                        <td height="15px"><img src="Images/pencil.png" width="15px" height="15px" /></td>
+                        <td height="15px" style="color:red">&#x274C</td>
+                    </tr>
 
-                        <tr style="background-color:#bff6f1">
-                            <td height="15px"></td>
-                            <td height="15px"></td>
-                            <td height="15px" align="center"><img src="Images/pencil.png" width="15px" height="15px" /></td>
-                            <td height="15px" style="color:red">&#x274C</td>
-                        </tr>
+                    <tr style="background-color:#bff6f1">
+                        <td height="15px"></td>
+                        <td height="15px"></td>
+                        <td height="15px" align="center"><img src="Images/pencil.png" width="15px" height="15px" /></td>
+                        <td height="15px" style="color:red">&#x274C</td>
+                    </tr>
 
-                        <tr>
-                            <td height="15px"></td>
-                            <td height="15px"></td>
-                            <td height="15px"><img src="Images/pencil.png" width="15px" height="15px" /></td>
-                            <td height="15px" style="color:red">&#x274C</td>
-                        </tr>
+                    <tr>
+                        <td height="15px"></td>
+                        <td height="15px"></td>
+                        <td height="15px"><img src="Images/pencil.png" width="15px" height="15px" /></td>
+                        <td height="15px" style="color:red">&#x274C</td>
+                    </tr>
 
-                        <tr style="background-color:#bff6f1">
-                            <td height="15px"></td>
-                            <td height="15px"></td>
-                            <td height="15px" align="center"><img src="Images/pencil.png" width="15px" height="15px" /></td>
-                            <td height="15px" style="color:red">&#x274C</td>
-                        </tr>
+                    <tr style="background-color:#bff6f1">
+                        <td height="15px"></td>
+                        <td height="15px"></td>
+                        <td height="15px" align="center"><img src="Images/pencil.png" width="15px" height="15px" /></td>
+                        <td height="15px" style="color:red">&#x274C</td>
+                    </tr>
 
-                        
-                    </table>
 
-                </td>
-                <td></td>
-            </tr>
+                </table>
 
-        </table>
+            </td>
+            <td></td>
+        </tr>
 
-        <footer style="text-align:center;background-color:#d1cdcd" class="stayDown">&copy; Copyright - Advanced Business & Healthcare Solutions India Pvt Ltd</footer>
-    </body > 
-</html >
-     
+    </table>
+
+    <footer style="text-align:center;background-color:#d1cdcd" class="stayDown">&copy; Copyright - Advanced Business & Healthcare Solutions India Pvt Ltd</footer>
+</body>
+</html>
