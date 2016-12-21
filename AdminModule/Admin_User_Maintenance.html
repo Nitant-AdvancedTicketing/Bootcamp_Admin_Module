@@ -34,86 +34,45 @@
                 return false;
             }
         }
+
+        function setUpForm()
+        {
+
+            //alert("Loaded!");
+            var EmployeeNames = new Array("Nitant", "Shivani", "Sarthak", "Dixita","Brijesh");
+            var EmployeeId = new Array(420, 432, 433, 434,425);
+
+            if (typeof (Storage) !== "undefined")
+            {
+                //alert("Hello" + EmployeeId.length);
+                for (var i = 0; i < EmployeeId.length; i++)
+                {
+                    //alert("added");
+                    localStorage.setItem("AI-" + EmployeeId[i], EmployeeNames[i]);
+                    // Retrieve
+
+                    document.getElementById("employeeNameSelect").innerHTML +=
+                        "<option value='" + localStorage.getItem("AI-" + EmployeeId[i]) + "'>" + localStorage.getItem("AI-" + EmployeeId[i]) + "</option>";
+                        
+                    // Code for localStorage/sessionStorage.
+                }
+                
+            } else
+            {
+                // Sorry! No Web Storage support..
+                alert("No Web Storage Supported!");
+            }            
+        }
     </script>
 
-
-
+    <script src="w3data.js""></script>
 </head>
-<body>
-    <header>
-        <table class="APOP_Title">
-            <tr>
-                <td><img src="Images/AdvancedLogo.jpg" width="130px"/></td>
-                <td style="text-align:left">
-                    <label for="advancedPurchaseOrderProcessing" style="font:bold; font-family:Calibri; font-size:xx-large; color:blue">Advanced Purchase Order Processing</label>
-                </td>
-            </tr>
-        </table>
-
-    </header>
-
-    <table style="width:100%; height:100%">
-        <tr>
-            <td>
-                <div class="dropdown">
-                    <button class="nav-bar">Administration</button>
-                    <div class="dropdown-content">
-                        <a href="Admin_User_Maintenance.html">User Maintenance</a>
-                        <a href="Admin_Group_Maintenance.html">Group Maintenance</a>
-                        <a href="Admin_Module_List.html">Module List </a>
-                        <a href="#">Program List </a>
-                    </div>
-
-                </div>
-
-
-            </td>
-
-            <td>
-                <div class="dropdown">
-                    <button class="nav-bar">Masters</button>
-                    <div class="dropdown-content">
-                        <a href="#">Vendors</a>
-                        <a href="#">Item Types</a>
-                        <a href="#">Shipping Locations</a>
-                    </div>
-
-                </div>
-
-
-            </td>
-
-            <td>
-                <div class="dropdown">
-                    <button class="nav-bar">PO Processing</button>
-                    <div class="dropdown-content">
-                        <a href="#">Requisition</a>
-                        <a href="#">Quotation</a>
-                        <a href="#">Purchase Order</a>
-                        <a href="#">Payments</a>
-                    </div>
-
-                </div>
-
-
-            </td>
-
-            <td>
-                <div class="dropdown">
-                    <button class="nav-bar">Reporting</button>
-                    <div class="dropdown-content">
-                        <a href="#">Print PO</a>
-                        <a href="#">AP Aging Analysis</a>
-                        <a href="#">Outstanding Orders</a>
-                        <a href="#">Closed Orders</a>
-                    </div>
-
-                </div>
-
-
-            </td>
-        </tr>
-    </table>
+<body onload="return setUpForm()">
+    <div w3-include-html="CommonHeader.html"></div> 
+    <script>
+        w3IncludeHTML();
+    </script>
+    
     <br />
     <br />
 
@@ -129,11 +88,8 @@
                     <label for="employeeName">Employee Name</label>
                 </td>
                 <td colspan="3">
-                    <select name="employeeName" style="width:350px" id="employeeName" title="Employee Name">
-                        <option value="Dixita">Dixita</option>
-                        <option value="Nitant">Nitant</option>
-                        <option value="Sarthak">Sarthak</option>
-                        <option value="Shivani">Shivani</option>
+                    <select id="employeeNameSelect" name="employeeName" style="width:350px" title="Employee Name">
+                        
                     </select>
                 </td>
                 <td></td>
@@ -189,8 +145,5 @@
 
     </form>
     <h1 id="a"></h1>
-
-    <footer style="text-align:center;background-color:#d1cdcd" class="stayDown">&copy; Copyright - Advanced Business & Healthcare Solutions India Pvt Ltd</footer>
-
 </body>
 </html>
