@@ -1,2 +1,9 @@
 ﻿Hex code for edit pencil: &#x270E
 Hex code for delete:&#x274C
+
+Things to Improve:
+New features of HTML5 and CSS3
+change javascript to Ajax
+Change Titles
+
+change file structure

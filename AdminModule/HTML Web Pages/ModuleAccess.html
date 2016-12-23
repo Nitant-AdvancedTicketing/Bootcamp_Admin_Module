@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin-Module Access</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="../CSS/AdminStyleSheet.css" />
+    <style type="text/css">
+        td{
+            text-align:center;
+        }
+    </style>
+
+    <script src="../Libraries/w3data.js"></script>
+
+</head > 
+    <body >
+        <div w3-include-html="CommonHeader.html"></div>
+        <script>
+            w3IncludeHTML();
+        </script>
+
+        <div id="AdminDropDown">
+            <table style="width:100%" ;>
+                <tr>
+                    <td> User Maintenance </td>
+                </tr>
+                <tr>
+                    <td> Group Maintenance</td>
+                </tr>
+                <tr>
+                    <td> Module List</td>
+                </tr>
+                <tr>
+                    <td>Program List</td>
+                </tr>                
+            </table>
+        </div>
+
+        <table align="center">
+
+            <tr></tr>
+
+            <tr></tr>
+            <tr>
+                <td></td>
+                <td class="pageTitleBanner" align="center">
+                    <label for="moduleAccess">MODULE ACCESS</label>
+                </td>
+                <td></td>
+            </tr>
+
+            <tr></tr>
+            <tr></tr>
+            
+            <tr>
+                <td style="background-color:#d1cdcd; font-weight:bold; font-family:Calibri">
+                    <label for="moduleName"> Module Name</label>&nbsp;
+                </td>
+
+                <td>
+                    <select name="moduleNameDropdown" style="width:150px">
+                        <option value="Administration">Administration</option>
+                        <option value="poProcessing">PO processing</option>
+                        <option value="reporting">Reporting</option>
+                    </select>
+                </td>
+
+                <td style="background-color:#d1cdcd;font-family:Calibri;font-weight:bold;">
+                    <label for="group">Group</label>&nbsp;
+                </td>
+
+                <td>
+                    <select name="groupDropdown" style="width:150px">
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                    </select>
+                </td>
+
+                <td>
+
+                </td>
+
+                <td>
+                    <input type="button" name="add" class="buttonStyle" value="Add"/>
+                </td>
+            </tr>
+            <tr>
+
+            </tr>
+
+            
+
+        </table>
+
+
+        <table align="center" width="900px">
+            <tr style="background-color:#d1cdcd;">
+                <td style="font-family:Calibri;font-weight:bold">Module</td>
+                <td style="font-family:Calibri;font-weight:bold">Group</td>
+                <td style="font-family:Calibri;font-weight:bold">Delete</td>
+            </tr>
+
+            <tr>
+                <td height="15px"></td>
+                <td height="15px"></td>
+                <td height="15px" style="color:red">&#x274C</td>
+            </tr>
+
+            <tr style="background-color:#bff6f1">
+                <td height="15px"></td>
+                <td height="15px"></td>
+                <td height="15px" style="color:red">&#x274C</td>
+            </tr>
+
+            <tr>
+                <td height="15px"></td>
+                <td height="15px"></td>
+                <td height="15px" style="color:red">&#x274C</td>
+            </tr>
+
+            <tr style="background-color:#bff6f1">
+                <td height="15px"></td>
+                <td height="15px"></td>
+                <td height="15px" style="color:red">&#x274C</td>
+            </tr>
+            <tr>
+                <td height="15px"></td>
+                <td height="15px"></td>
+                <td height="15px" style="color:red">&#x274C</td>
+            </tr>
+
+            <tr style="background-color:#bff6f1">
+                <td height="15px"></td>
+                <td height="15px"></td>
+                <td height="15px" style="color:red">&#x274C</td>
+            </tr>
+            <tr>
+                <td height="15px"></td>
+                <td height="15px"></td>
+                <td height="15px" style="color:red">&#x274C</td>
+            </tr>
+
+            <tr style="background-color:#bff6f1">
+                <td height="15px"></td>
+                <td height="15px"></td>
+                <td height="15px" style="color:red">&#x274C</td>
+            </tr>
+
+        </table>        
+    </body > 
+</html >
+        
