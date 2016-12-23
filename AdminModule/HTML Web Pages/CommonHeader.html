@@ -2,7 +2,19 @@
 <html>
 <head>
     <title></title>
-	<meta charset="utf-8" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="../CSS/AdminStyleSheet.css" />    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+    <script>
+        $(document).ready(function ()
+        {
+            $(".nav-bar").click(function ()
+            {
+                $(".dropdown-content").slideToggle("slow");
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -28,10 +40,7 @@
                         <a href="Admin_Module_List.html">Module List </a>
                         <a href="#">Program List </a>
                     </div>
-
                 </div>
-
-
             </td>
 
             <td>
@@ -75,7 +84,7 @@
         </tr>
     </table>
     <br />
-    <br />
+    <br />        
     <footer style="text-align:center;background-color:#d1cdcd" class="stayDown">&copy; Copyright - Advanced Business & Healthcare Solutions India Pvt Ltd</footer>
 </body>
 </html>

@@ -1,20 +1,19 @@
 ﻿body {
-    
 }
 
 .nav-bar {
     background-color: #a76060;
-    color:black;
+    color: black;
     text-align: center;
     width: 336px;
     cursor: pointer;
-    font-family:'Bookman Old Style';
-    font-size:medium;
+    font-family: 'Bookman Old Style';
+    font-size: medium;
 }
 
     .nav-bar:hover {
-        color:white;
-        background-color:#753030;
+        color: white;
+        background-color: #753030;
     }
 
 .stayDown {
@@ -66,15 +65,14 @@ textarea {
 .dropdown {
     position: relative;
     display: inline-block;
-    
 }
 
-.inputPanelTable{
-    background-color:#e4dfdf; 
-    border-style:groove; 
-    border-radius:10px;
-    width:600px;
-    border-color:aliceblue;
+.inputPanelTable {
+    background-color: #e4dfdf;
+    border-style: groove;
+    border-radius: 10px;
+    width: 600px;
+    border-color: aliceblue;
 }
 /* Dropdown Content (Hidden by Default) */
 
@@ -90,17 +88,17 @@ textarea {
         padding: 5px 16px;
         text-decoration: none;
         display: block;
-        font-family:'Bookman Old Style';
-        font-size:small;        
+        font-family: 'Bookman Old Style';
+        font-size: small;
     }
 
-    .dropdown-content a:hover{
-        color:white;
-        background-color:black;
-    }
-/* Show the dropdown menu on hover */
+        .dropdown-content a:hover {
+            color: white;
+            background-color: black;
+        }
+
 .dropdown:hover .dropdown-content {
-    display: block;
+    display: inline-block;
     width: 336px;
     text-align: center;
 }

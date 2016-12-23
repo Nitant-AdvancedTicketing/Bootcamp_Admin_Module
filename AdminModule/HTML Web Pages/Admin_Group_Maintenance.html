@@ -5,6 +5,14 @@
     <meta charset="utf-8" />
 
     <link rel="stylesheet" type="text/css" href="../CSS/AdminStyleSheet.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <style>
+        input.ng-invalid {
+            background-color: lightblue;
+        }
+    </style>
 
     <script type="text/javascript">
         function validateForm()
@@ -50,7 +58,7 @@
 
         function validateGroupDescription(val)
         {
-            if (val.value.length>=250)
+            if (val.value.length >= 250)
             {
                 alert("Description cannot exceed 250 characters!");
                 val.value = "";
@@ -61,8 +69,7 @@
         }
     </script>
 
-    <script src="../Libraries/w3data.js"></script>
-
+    <script src="../Libraries/w3data.js"></script>    
 </head>
 <body>
 
@@ -71,7 +78,7 @@
         w3IncludeHTML();
     </script>
 
-    <form name="GroupMaintenance" onsubmit="return validateForm()">
+    <form ng-app="" name="GroupMaintenance" onsubmit="return validateForm()">
         <table align="center" width="100%">
             <tr>
                 <td class="pageTitleBanner">GROUP MAINTENANCE</td>
@@ -84,7 +91,7 @@
                     <label for="groupId">Group ID</label><sup style="color:red">*</sup>
                 </td>
                 <td colspan="2">
-                    <input type="text" id="groupId" width="40" placeholder="Group ID" title="Group ID must have a lower case or uppercase name followed by hyphen and a number" onblur="validategroupID(this)" required />
+                    <input type="text" ng-model="groupId" id="groupId" width="40" placeholder="Group ID" title="Group ID must have a lower case or uppercase name followed by hyphen and a number" onblur="validategroupID(this)" required />
                 </td>
             </tr>
             <tr>
@@ -92,7 +99,7 @@
                     <label for="description">Description</label><sup style="color:red">*</sup>
                 </td>
                 <td colspan="2">
-                    <textarea id="description" rows="5" cols="50" placeholder="Enter a brief description of the group here..." onblur="return validateGroupDescription(this)"></textarea>
+                    <textarea ng-model="groupDesciption" id="description" rows="5" cols="50" placeholder="Enter a brief description of the group here..." onblur="return validateGroupDescription(this)" required></textarea>
                 </td>
             </tr>
             <tr>

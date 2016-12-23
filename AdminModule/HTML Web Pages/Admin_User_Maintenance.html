@@ -4,6 +4,13 @@
     <title>Admin - User Maintenance</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="../CSS/AdminStyleSheet.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <style>
+        input.ng-invalid 
+        {
+            background-color: lightblue;
+        }
+    </style>
     <script type="text/javascript">
         function validateForm()
         {
@@ -36,9 +43,7 @@
         }
 
         function setUpForm()
-        {
-
-            //alert("Loaded!");
+        {            
             var EmployeeNames = new Array("Nitant", "Shivani", "Sarthak", "Dixita","Brijesh");
             var EmployeeId = new Array(420, 432, 433, 434,425);
 
@@ -66,6 +71,8 @@
     </script>
 
     <script src="../Libraries/w3data.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
 </head>
 <body onload="return setUpForm()">
     <div w3-include-HTML="CommonHeader.html"></div> 
@@ -73,7 +80,7 @@
         w3IncludeHTML();
     </script>
     
-    <form name="UserMaintenance" onsubmit="return validateForm()">
+    <form ng-app="" name="UserMaintenance" onsubmit="return validateForm()">
         <table align="center" width="100%">
             <tr>
                 <td class="pageTitleBanner">USER MAINTENANCE</td>
@@ -85,7 +92,7 @@
                     <label for="employeeNameSelect">Employee Name</label>
                 </td>
                 <td colspan="3">
-                    <select id="employeeNameSelect" name="employeeName" style="width:350px" title="Employee Name">
+                    <select ng-model="employeeNameSelect" id="employeeNameSelect" name="employeeName" style="width:350px" title="Employee Name">
                         
                     </select>
                 </td>
@@ -97,7 +104,7 @@
                     <label for="group">Group</label>
                 </td>
                 <td colspan="3">
-                    <select name="group" style="width:350px" id="group" title="Group Name">
+                    <select ng-model="group" name="group" style="width:350px" id="group" title="Group Name">
                         <option value="Administration">Administration</option>
                         <option value="Masters">Masters</option>
                         <option value="PO Processing">PO Processing</option>
@@ -113,7 +120,7 @@
                     <label for="password">Password</label> <sup style="color:red">*</sup>
                 </td>
                 <td colspan="3">
-                    <input style="width:350px" type="password" id="password" name="p1" placeholder="Password" title="Password must be 6-12 characters long, must contain letters, numbers and special character!" required />
+                    <input ng-model="password" style="width:350px" type="password" id="password" name="p1" placeholder="Password" title="Password must be 6-12 characters long, must contain letters, numbers and special character!" required />
                 </td>
                 <td></td>
             </tr>
@@ -123,15 +130,14 @@
                     <label for="rePassword">Re-enter Password</label> <sup style="color:red">*</sup>
                 </td>
                 <td colspan="3">
-                    <input style="width:350px" type="password" id="rePassword" placeholder="Re-enter Password" required />
+                    <input  ng-model="rePassword" style="width:350px" type="password" id="rePassword" placeholder="Re-enter Password" required />
                 </td>
                 <td></td>
             </tr>
             <tr>
                 <td></td>
                 <td align="right" width="50px">
-                    <input type="submit" value="Save" class="buttonStyle" />
-                    <!-- onclick="checkPwd(document.UserMaintenance.p1)"/> -->
+                    <input type="submit" value="Save" class="buttonStyle" />                    
                 </td>
                 <td align="left">
                     <input type="reset" value="Reset" class="buttonStyle" />

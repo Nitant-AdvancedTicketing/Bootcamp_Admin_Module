@@ -5,7 +5,13 @@
     	<meta charset="utf-8" />
 
         <link rel="stylesheet" type="text/css" href="../CSS/AdminStyleSheet.css" />
-        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <style>
+            input.ng-invalid {
+                background-color: lightblue;
+            }
+        </style>
+
         <script type="text/javascript">
         function validateForm()
         {
@@ -48,7 +54,7 @@
             w3IncludeHTML();
         </script>
 
-        <form name="moduleList">
+        <form ng-app="" name="moduleList">
             <table align="center" width="100%">
                 <tr>
                     <td class="pageTitleBanner">MODULE LIST</td>
@@ -75,7 +81,7 @@
                         <label for="programName">Program Name</label><sup style="color:red">*</sup>
                     </td>
                     <td colspan="2" >
-                        <input style="width:200px;"type="text" id="ProgramName" title="Program Name can contain any combination of upper case letters, lower case letters and/or numbers" placeholder="Enter program name" required onblur="validateProgramName(this)" />
+                        <input ng-model="ProgramName" style="width:200px;"type="text" id="ProgramName" title="Program Name can contain any combination of upper case letters, lower case letters and/or numbers" placeholder="Enter program name" required onblur="validateProgramName(this)" />
                     </td>
                 </tr>
                 <tr>                    
